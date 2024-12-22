@@ -3,8 +3,9 @@ import { CustomIcon, IconType } from "../components/custom_icon";
 import { Section } from "../components/section";
 import { ThemedText } from "../components/themed_text";
 import { cn } from "@/lib/utils";
+import { Legend } from "../components/Legend";
 
-const SKILLS: ICol[] = [
+const SKILLS: ISkillCol[] = [
   {
     name: "Frontend",
     skills: [
@@ -39,7 +40,7 @@ const SKILLS: ICol[] = [
   },
 ];
 
-interface ICol {
+interface ISkillCol {
   name: string;
   skills: ISkill[];
 }
@@ -53,20 +54,17 @@ interface ISkill {
 export const SkillSection = () => {
   return (
     <Section title="Compétences">
-      <div className="flex justify-center items-center gap-2">
-        <div className="block h-6 w-6 bg-accent/40 border-2 border-primary rounded-md"></div>
-        <ThemedText variant="muted">Ce que je préfère</ThemedText>
-      </div>
-      <ul className="flex flex-col items-center gap-8">
-        {SKILLS.map((col) => (
-          <li key={col.name}>
+      <Legend text="Ce que je préfère" />
+      <ul className="flex justify-center items-center flex-wrap gap-8">
+        {SKILLS.map((skillCol) => (
+          <li key={skillCol.name}>
             <Card className="bg-accent/20">
               <CardHeader>
-                <ThemedText variant="h4">{col.name}</ThemedText>
+                <ThemedText variant="h4">{skillCol.name}</ThemedText>
               </CardHeader>
               <CardContent>
                 <ul className="flex flex-col items-start gap-4">
-                  {col.skills.map((skill) => (
+                  {skillCol.skills.map((skill) => (
                     <li key={skill.name}>
                       <Card
                         className={cn(

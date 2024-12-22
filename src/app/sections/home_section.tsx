@@ -19,7 +19,7 @@ interface IButton {
 
 export const HomeSection = () => {
   return (
-    <Section className="gap-8">
+    <Section className="flex-row justify-center items-center flex-wrap gap-8">
       <div className="flex flex-col items-center gap-2">
         <div className="flex flex-col gap-2">
           <ThemedText className="text-center" variant="h1">
