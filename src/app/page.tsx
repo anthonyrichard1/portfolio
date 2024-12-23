@@ -9,7 +9,7 @@ import { SkillSection } from "./sections/skill_section";
 
 export default function Home() {
   return (
-    <main className="w-screen flex flex-col justify-between gap-8 px-4 py-4 cursor-default">
+    <main className="h-screen flex flex-col justify-between gap-8 px-4 py-4 cursor-default">
       <SizeChecker />
       <HomeSection />
       <AboutSection />

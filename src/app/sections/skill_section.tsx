@@ -9,9 +9,9 @@ const SKILLS: ISkillCol[] = [
   {
     name: "Frontend",
     skills: [
-      { icon: "php", name: "Php" },
       { icon: "react", name: "React" },
       { icon: "angular", name: "Angular", isPrefered: true },
+      { icon: "php", name: "Php" },
     ],
   },
   {
@@ -33,9 +33,9 @@ const SKILLS: ISkillCol[] = [
     name: "Outils",
     skills: [
       { icon: "git", name: "Git", isPrefered: true },
-      { icon: "jira", name: "Jira" },
       { icon: "docker", name: "Docker" },
       { icon: "sonar", name: "SonarQube", isPrefered: true },
+      { icon: "jira", name: "Jira" },
     ],
   },
 ];
@@ -55,7 +55,7 @@ export const SkillSection = () => {
   return (
     <Section title="Compétences">
       <Legend text="Ce que je préfère" />
-      <ul className="flex justify-center items-center flex-wrap gap-8">
+      <ul className="flex justify-center flex-wrap gap-8">
         {SKILLS.map((skillCol) => (
           <li key={skillCol.name}>
             <Card className="bg-accent/20">
@@ -63,7 +63,7 @@ export const SkillSection = () => {
                 <ThemedText variant="h4">{skillCol.name}</ThemedText>
               </CardHeader>
               <CardContent>
-                <ul className="flex flex-col items-start gap-4">
+                <ul className="flex flex-col gap-4">
                   {skillCol.skills.map((skill) => (
                     <li key={skill.name}>
                       <Card

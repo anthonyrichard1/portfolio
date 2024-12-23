@@ -9,6 +9,7 @@ import { Section } from "../components/section";
 import { ThemedText } from "../components/themed_text";
 import { cn } from "@/lib/utils";
 import { CustomIcon, IconType } from "../components/custom_icon";
+import { MONTHS } from "../date_utils";
 
 const EVENTS: IEventCol[] = [
   {
@@ -17,7 +18,8 @@ const EVENTS: IEventCol[] = [
       {
         title: "Développeur Java (alternance)",
         subtitle: "BeBlocks, Clermont-Ferrand (63)",
-        date: "Septembre 2024 - Août 2025",
+        startDate: new Date("2024-09"),
+        endDate: new Date("2025-08"),
         content: [
           "Conception / développement",
           "Méthodes agiles",
@@ -28,7 +30,8 @@ const EVENTS: IEventCol[] = [
       {
         title: "Développeur mobile (stage)",
         subtitle: "BeYs Trusted Solution, Clermont-Ferrand (63)",
-        date: "Juin 2024 - Août 2024",
+        startDate: new Date("2024-06"),
+        endDate: new Date("2024-08"),
         content: ["Conception / développement", "Méthodes agiles"],
         stack: ["java", "cs", "git", "docker", "jira"],
       },
@@ -40,7 +43,8 @@ const EVENTS: IEventCol[] = [
       {
         title: "BUT Informatique",
         subtitle: "UCA, Aubière (63)",
-        date: "Septembre 2022 - Août 2025",
+        startDate: new Date("2022-09"),
+        endDate: new Date("2025-08"),
         content: [
           "Développement web / mobile",
           "Administration réseau / BDD",
@@ -51,7 +55,8 @@ const EVENTS: IEventCol[] = [
       {
         title: "Semestre d'étude au Canada",
         subtitle: "UQAC, Saguenay (CA)",
-        date: "Janvier 2024 - Avril 2024",
+        startDate: new Date("2024-01"),
+        endDate: new Date("2024-04"),
         content: [
           "Cybersécurité",
           "Développement mobile / jeux-vidéo",
@@ -61,7 +66,8 @@ const EVENTS: IEventCol[] = [
       {
         title: "Baccalauréat Général",
         subtitle: "Lycée Hippolyte Carnot, Roanne (42)",
-        date: "Septembre 2019 - Juillet 2022",
+        startDate: new Date("2019-09"),
+        endDate: new Date("2022-07"),
         content: [
           "Développement web / mobile",
           "Administration réseau / BDD",
@@ -81,7 +87,8 @@ interface IEventCol {
 interface IEvent {
   title: string;
   subtitle: string;
-  date: string;
+  startDate: Date;
+  endDate: Date;
   content: string[];
   stack?: IconType[];
 }
@@ -98,7 +105,7 @@ export const JourneySection = () => {
                 <ThemedText variant="h4">{eventCol.name}</ThemedText>
               </CardHeader>
               <CardContent>
-                <ul className="flex justify-center items-center flex-wrap gap-8">
+                <ul className="flex justify-center flex-wrap gap-8">
                   {eventCol.events.map((event, index) => (
                     <li key={event.title}>
                       <Card
@@ -108,7 +115,15 @@ export const JourneySection = () => {
                         )}
                       >
                         <CardHeader>
-                          <ThemedText variant="muted">{event.date}</ThemedText>
+                          <ThemedText variant="muted">
+                            {MONTHS[event.startDate.getMonth()] +
+                              " " +
+                              event.startDate.getFullYear() +
+                              " - " +
+                              MONTHS[event.endDate.getMonth()] +
+                              " " +
+                              event.endDate.getFullYear()}
+                          </ThemedText>
                           <ThemedText variant="h4">{event.title}</ThemedText>
                           <ThemedText variant="muted">
                             {event.subtitle}
@@ -123,7 +138,7 @@ export const JourneySection = () => {
                         </CardContent>
                         {event.stack && event.stack.length != 0 ? (
                           <CardFooter>
-                            <ul className="flex justify-center items-center gap-4 flex-wrap">
+                            <ul className="flex gap-4 flex-wrap">
                               {event.stack?.map((elt) => (
                                 <li key={elt}>
                                   <CustomIcon icon={elt} size={30} />
