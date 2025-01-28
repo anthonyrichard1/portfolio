@@ -4,7 +4,6 @@ import AboutSection from "./sections/AboutSection";
 import HomeSection from "./sections/HomeSection";
 import JourneySection from "./sections/JourneySection";
 import ProjectSection from "./sections/ProjectSection";
-import SkillSection from "./sections/SkillSection";
 
 export default function Home() {
   return (
@@ -12,7 +11,6 @@ export default function Home() {
       <SizeChecker />
       <HomeSection />
       <AboutSection />
-      <SkillSection />
       <ProjectSection />
       <JourneySection />
       <Footer />
