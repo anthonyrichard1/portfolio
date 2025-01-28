@@ -1,11 +1,10 @@
-import { Footer } from "./components/footer";
-import { SizeChecker } from "./components/responsive_tool";
-import { AboutSection } from "./sections/about_section";
-import { ContactSection } from "./sections/contact_section";
-import { HomeSection } from "./sections/home_section";
-import { JourneySection } from "./sections/journey_section";
-import { ProjectSection } from "./sections/project_section";
-import { SkillSection } from "./sections/skill_section";
+import Footer from "./components/Footer";
+import SizeChecker from "./components/SizeChecker";
+import AboutSection from "./sections/AboutSection";
+import HomeSection from "./sections/HomeSection";
+import JourneySection from "./sections/JourneySection";
+import ProjectSection from "./sections/ProjectSection";
+import SkillSection from "./sections/SkillSection";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
       <SkillSection />
       <ProjectSection />
       <JourneySection />
-      <ContactSection />
       <Footer />
     </main>
   );

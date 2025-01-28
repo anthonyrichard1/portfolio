@@ -425,13 +425,159 @@ const ICONS = {
       </g>
     </svg>
   ),
+  web: (props: svgProps) => (
+    <svg
+      width="800px"
+      height="800px"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M20.501 6.028V6h-.02A10.28 10.28 0 0 0 4.519 6H4.5v.028a10.262 10.262 0 0 0 0 12.944V19h.02a10.28 10.28 0 0 0 15.962 0h.021v-.028a10.262 10.262 0 0 0 0-12.944zM13 6V3.272A4.533 4.533 0 0 1 15.54 6zm2.935 1a16.827 16.827 0 0 1 .853 5H13V7zM12 3.272V6H9.46A4.533 4.533 0 0 1 12 3.272zM12 7v5H8.212a16.827 16.827 0 0 1 .853-5zm-4.787 5H3.226a9.234 9.234 0 0 1 1.792-5h2.984a17.952 17.952 0 0 0-.79 5zm0 1a17.952 17.952 0 0 0 .789 5H5.018a9.234 9.234 0 0 1-1.792-5zm1 0H12v5H9.065a16.827 16.827 0 0 1-.853-5zM12 19v2.728A4.533 4.533 0 0 1 9.46 19zm1 2.728V19h2.54A4.533 4.533 0 0 1 13 21.728zM13 18v-5h3.788a16.827 16.827 0 0 1-.853 5zm4.787-5h3.987a9.234 9.234 0 0 1-1.792 5h-2.984a17.952 17.952 0 0 0 .79-5zm0-1a17.952 17.952 0 0 0-.789-5h2.984a9.234 9.234 0 0 1 1.792 5zm1.352-6h-2.501a8.524 8.524 0 0 0-1.441-2.398A9.306 9.306 0 0 1 19.139 6zM9.803 3.602A8.524 8.524 0 0 0 8.363 6H5.86a9.306 9.306 0 0 1 3.942-2.398zM5.861 19h2.501a8.524 8.524 0 0 0 1.441 2.398A9.306 9.306 0 0 1 5.861 19zm9.336 2.398A8.524 8.524 0 0 0 16.637 19h2.502a9.306 9.306 0 0 1-3.942 2.398z"
+      />
+      <path fill="none" d="M0 0h24v24H0z" />
+    </svg>
+  ),
+  mobile: (props: svgProps) => (
+    <svg
+      width="800px"
+      height="800px"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M12 18H12.01M9.2 21H14.8C15.9201 21 16.4802 21 16.908 20.782C17.2843 20.5903 17.5903 20.2843 17.782 19.908C18 19.4802 18 18.9201 18 17.8V6.2C18 5.0799 18 4.51984 17.782 4.09202C17.5903 3.71569 17.2843 3.40973 16.908 3.21799C16.4802 3 15.9201 3 14.8 3H9.2C8.0799 3 7.51984 3 7.09202 3.21799C6.71569 3.40973 6.40973 3.71569 6.21799 4.09202C6 4.51984 6 5.07989 6 6.2V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  videogame: (props: svgProps) => (
+    <svg
+      version="1.1"
+      id="Icons"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        d="M23,17L9.3,17C6,17,3.1,19.5,3,22.8C2.9,26.2,5.6,29,9,29c2.6,0,4.8-1.7,5.7-4c0.2-0.6,0.7-1,1.3-1h0
+ c0.6,0,1.1,0.4,1.3,1c0.9,2.6,3.6,4.4,6.6,4c2.6-0.4,4.7-2.6,5-5.2C29.4,20.1,26.6,17,23,17z"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        x1="9"
+        y1="21"
+        x2="9"
+        y2="25"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        x1="7"
+        y1="23"
+        x2="11"
+        y2="23"
+      />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        d="M15,13v-1c0-1.1,0.9-2,2-2h2c1.1,0,2-0.9,2-2v0c0-1.1-0.9-2-2-2h-2c-1.1,0-2-0.9-2-2V2"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        x1="13"
+        y1="13"
+        x2="17"
+        y2="13"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        x1="23"
+        y1="21"
+        x2="23"
+        y2="21"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        x1="23"
+        y1="25"
+        x2="23"
+        y2="25"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        x1="21"
+        y1="23"
+        x2="21"
+        y2="23"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        x1="25"
+        y1="23"
+        x2="25"
+        y2="23"
+      />
+    </svg>
+  ),
 };
 
 const DEFAULT_ICON_SIZE = 36;
 
 type props = { icon: IconType; size?: number; className?: string };
 
-export const CustomIcon = ({ icon, size, className, ...rest }: props) => {
+export const CustomIcon = ({ icon, size, className, ...props }: props) => {
   const Component = ICONS[icon];
   const iconSize = size ?? DEFAULT_ICON_SIZE;
   return (
@@ -439,7 +585,7 @@ export const CustomIcon = ({ icon, size, className, ...rest }: props) => {
       className={className}
       height={iconSize}
       width={iconSize}
-      {...rest}
+      {...props}
     />
   );
 };

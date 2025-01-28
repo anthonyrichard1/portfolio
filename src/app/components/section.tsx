@@ -1,18 +1,29 @@
 import { cn } from "@/lib/utils";
-import { PropsWithChildren } from "react";
-import { ThemedText } from "./themed_text";
+import { forwardRef, HTMLAttributes, Ref } from "react";
+import Text from "./Text";
 
-type props = PropsWithChildren & { className?: string; title?: string };
+interface Props extends HTMLAttributes<HTMLElement> {
+  title?: string;
+}
 
-export const Section = ({ className, title, children, ...rest }: props) => {
-  return (
-    <section className={cn("flex flex-col gap-4", className)} {...rest}>
-      {title ? (
-        <ThemedText className="text-center" variant="h3">
-          {title}
-        </ThemedText>
-      ) : null}
-      {children}
-    </section>
-  );
-};
+const Section = forwardRef<HTMLElement, Props>(
+  ({ className, children, title, ...props }, ref) => {
+    return (
+      <section
+        className={cn("flex flex-col gap-4", className)}
+        {...props}
+        ref={ref as Ref<HTMLElement>}
+      >
+        {title ? (
+          <Text className="text-center" variant="h3">
+            {title}
+          </Text>
+        ) : null}
+        {children}
+      </section>
+    );
+  }
+);
+
+Section.displayName = "Section";
+export default Section;
