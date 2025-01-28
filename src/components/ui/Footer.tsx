@@ -2,12 +2,12 @@ import { forwardRef, HTMLAttributes } from "react";
 import Text from "./Text";
 import { cn } from "@/lib/utils";
 
-const Footer = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+const Footer = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => {
     return (
       <footer
         className={cn(
-          "flex flex-col items-center border-t-[1px] border-primary pt-3",
+          "flex flex-col items-center gap-1 border-t-[1px] border-primary pt-3 pb-2",
           className
         )}
         {...ref}

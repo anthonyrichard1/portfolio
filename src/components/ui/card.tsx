@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import Text from "@/app/components/Text";
+import Text from "@/components/ui/Text";
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -37,7 +37,10 @@ const CardTitle = React.forwardRef<
   <Text
     variant="h4"
     ref={ref}
-    className={cn("font-semibold leading-none tracking-tight", className)}
+    className={cn(
+      "font-semibold leading-none tracking-tight text-center",
+      className
+    )}
     {...props}
   />
 ));

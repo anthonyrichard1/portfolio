@@ -5,12 +5,12 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { CustomIcon, IconType } from "../components/custom_icon";
+import { CustomIcon, IconType } from "../../components/ui/custom_icon";
 import { MONTHS } from "../date_utils";
 import { forwardRef, HTMLAttributes, Ref } from "react";
-import Section from "../components/Section";
-import Text from "../components/Text";
-import Legend from "../components/Legend";
+import Section from "../../components/ui/Section";
+import Text from "../../components/ui/Text";
+import Legend from "../../components/ui/Legend";
 
 const EVENTS: IEventCol[] = [
   {
@@ -94,72 +94,73 @@ interface IEvent {
   stack?: IconType[];
 }
 
-const JourneySection = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
-  ({ ...props }, ref) => {
-    return (
-      <Section title="Parcours" ref={ref as Ref<HTMLElement>} {...props}>
-        <Legend text="Derniers évènements" />
-        <ul className="flex flex-col items-center flex-wrap gap-8">
-          {EVENTS.map((eventCol) => (
-            <li key={eventCol.name}>
-              <Card className="bg-accent/20">
-                <CardHeader>
-                  <Text variant="h4">{eventCol.name}</Text>
-                </CardHeader>
-                <CardContent>
-                  <ul className="flex justify-center flex-wrap gap-8">
-                    {eventCol.events.map((event, index) => (
-                      <li key={event.title}>
-                        <Card
-                          className={cn(
-                            "bg-accent/40",
-                            index == 0 ? "border-primary border-2" : null
-                          )}
-                        >
-                          <CardHeader>
-                            <Text variant="muted">
-                              {MONTHS[event.startDate.getMonth()] +
-                                " " +
-                                event.startDate.getFullYear() +
-                                " - " +
-                                MONTHS[event.endDate.getMonth()] +
-                                " " +
-                                event.endDate.getFullYear()}
-                            </Text>
-                            <Text variant="h4">{event.title}</Text>
-                            <Text variant="muted">{event.subtitle}</Text>
-                          </CardHeader>
-                          <CardContent>
-                            <ul className="list-disc pl-4">
-                              {event.content.map((elt) => (
-                                <li key={elt}>{elt}</li>
+const JourneySection = forwardRef<
+  HTMLDivElement,
+  HTMLAttributes<HTMLDivElement>
+>(({ ...props }, ref) => {
+  return (
+    <Section title="Parcours" ref={ref as Ref<HTMLDivElement>} {...props}>
+      <Legend text="Derniers évènements" />
+      <ul className="flex flex-col items-center flex-wrap gap-8">
+        {EVENTS.map((eventCol) => (
+          <li key={eventCol.name}>
+            <Card className="bg-accent/20">
+              <CardHeader>
+                <Text variant="h4">{eventCol.name}</Text>
+              </CardHeader>
+              <CardContent>
+                <ul className="flex justify-center flex-wrap gap-8">
+                  {eventCol.events.map((event, index) => (
+                    <li key={event.title}>
+                      <Card
+                        className={cn(
+                          "bg-accent/40",
+                          index == 0 ? "border-primary border-2" : null
+                        )}
+                      >
+                        <CardHeader className="pb-2">
+                          <Text variant="muted">
+                            {MONTHS[event.startDate.getMonth()] +
+                              " " +
+                              event.startDate.getFullYear() +
+                              " - " +
+                              MONTHS[event.endDate.getMonth()] +
+                              " " +
+                              event.endDate.getFullYear()}
+                          </Text>
+                          <Text variant="h4">{event.title}</Text>
+                          <Text variant="muted">{event.subtitle}</Text>
+                        </CardHeader>
+                        <CardContent>
+                          <ul className="list-disc pl-4">
+                            {event.content.map((elt) => (
+                              <li key={elt}>{elt}</li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                        {event.stack && event.stack.length != 0 ? (
+                          <CardFooter>
+                            <ul className="flex gap-4 flex-wrap">
+                              {event.stack?.map((elt) => (
+                                <li key={elt}>
+                                  <CustomIcon icon={elt} size={30} />
+                                </li>
                               ))}
                             </ul>
-                          </CardContent>
-                          {event.stack && event.stack.length != 0 ? (
-                            <CardFooter>
-                              <ul className="flex gap-4 flex-wrap">
-                                {event.stack?.map((elt) => (
-                                  <li key={elt}>
-                                    <CustomIcon icon={elt} size={30} />
-                                  </li>
-                                ))}
-                              </ul>
-                            </CardFooter>
-                          ) : null}
-                        </Card>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </li>
-          ))}
-        </ul>
-      </Section>
-    );
-  }
-);
+                          </CardFooter>
+                        ) : null}
+                      </Card>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </li>
+        ))}
+      </ul>
+    </Section>
+  );
+});
 
 JourneySection.displayName = "JourneySection";
 export default JourneySection;

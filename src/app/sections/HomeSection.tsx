@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { CustomIcon, IconType } from "../components/custom_icon";
-import Text from "../components/Text";
-import Section from "../components/Section";
+import { CustomIcon, IconType } from "../../components/ui/custom_icon";
+import Text from "../../components/ui/Text";
+import Section from "../../components/ui/Section";
 import { forwardRef, HTMLAttributes, Ref } from "react";
 import { cn } from "@/lib/utils";
 
-const HomeSection = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+const HomeSection = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => {
     interface IButton {
       icon: IconType;
@@ -28,7 +28,7 @@ const HomeSection = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
           className
         )}
         {...props}
-        ref={ref as Ref<HTMLElement>}
+        ref={ref as Ref<HTMLDivElement>}
       >
         <div className="flex flex-col items-center gap-2">
           <div className="flex flex-col gap-2">

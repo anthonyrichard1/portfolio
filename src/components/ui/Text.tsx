@@ -3,10 +3,11 @@ import React, { PropsWithChildren, forwardRef } from "react";
 
 const DEFAULT_VARIANT = "p";
 
-interface Props extends PropsWithChildren<React.HTMLAttributes<HTMLElement>> {
+interface Props
+  extends PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   variant?: TextVariant;
 }
-const Text = forwardRef<HTMLElement, Props>(
+const Text = forwardRef<HTMLDivElement, Props>(
   ({ className, variant, children, ...props }, ref) => {
     switch (variant ?? DEFAULT_VARIANT) {
       case "h1":
@@ -94,7 +95,7 @@ const Text = forwardRef<HTMLElement, Props>(
       case "code":
         return (
           <code
-            ref={ref as React.Ref<HTMLElement>}
+            ref={ref as React.Ref<HTMLDivElement>}
             className={cn(
               "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
               className

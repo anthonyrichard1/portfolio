@@ -1,12 +1,12 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { CustomIcon, IconType } from "../components/custom_icon";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CustomIcon, IconType } from "../../components/ui/custom_icon";
 import { cn } from "@/lib/utils";
-import Legend from "../components/Legend";
-import Section from "../components/Section";
-import Text from "../components/Text";
+import Legend from "../../components/ui/Legend";
+import Section from "../../components/ui/Section";
+import Text from "../../components/ui/Text";
 import { forwardRef, HTMLAttributes, Ref } from "react";
 
-const SkillSection = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+const SkillSection = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ ...props }, ref) => {
     interface ISkill {
       icon: IconType;
@@ -55,14 +55,14 @@ const SkillSection = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
     ];
 
     return (
-      <Section title="Compétences" {...props} ref={ref as Ref<HTMLElement>}>
+      <Section title="Compétences" {...props} ref={ref as Ref<HTMLDivElement>}>
         <Legend text="Ce que je préfère" />
         <ul className="flex justify-center flex-wrap gap-8">
           {skills.map((skillCol) => (
             <li key={skillCol.name}>
               <Card className="bg-accent/20">
                 <CardHeader>
-                  <Text variant="h4">{skillCol.name}</Text>
+                  <CardTitle>{skillCol.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="flex flex-col gap-4">
